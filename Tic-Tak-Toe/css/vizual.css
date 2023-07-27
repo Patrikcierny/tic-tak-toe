@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Merriweather Sans", sans-serif;
+    color: darkslateblue;
+}
+
+.title {
+    max-width: 500px;
+}
+
+.center {
+    height: 750px;
+    max-width: 1440px;
+    display: flex;  
+    align-items: center;
+    justify-content: space-between; 
+    margin:  0 auto;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 65px;
+    font-weight: bold;
+}
+
+.restart {
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 45px;
+    display: flex;
+    border-radius: 50px;
+    border: 2px solid darkslateblue;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.restart:hover {
+    background: darkslateblue;
+    color: white;
+}
+
+.hra {
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.score {
+    display: flex;
+    color: rgb(180, 155, 240);
+    font-size: 28px;
+}
+
+.score .hrac-X {
+    flex: 1;
+    border-bottom: 4px solid #eee;
+    padding-bottom: 5px;
+}
+
+.hrac-X.active {
+   color: rgb(236, 136, 236); 
+   border-color: rgb(236, 136, 236);  ;
+}
+
+.score .hrac-O {
+    flex: 1;
+    border-bottom: 4px solid #eee;
+    padding-bottom: 5px;
+}
+
+.hrac-O.active {
+    color: rgb(109, 241, 241);
+    border-color: rgb(109, 241, 241);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.board-tile {
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.board-tile:not(:nth-child(3n)) {
+    border-right: 2px solid rgba(137, 163, 189);
+}
+
+.board-tile:not(:nth-last-child(-n+3)) {
+    border-bottom: 2px solid rgba(137, 163, 189);
+}
+
+.board-tile:hover {
+    background: #eee;
+}
+
+.tile-x {
+    color: rgb(236, 136, 236);  
+}
+
+.tile-o {
+  color: rgb(109, 241, 241);
+}
+
+.tile-winner span{
+    color: rgb(38, 209, 38);
+}
+
+@media only screen and (max-width: 1200px) {
+    .center {
+        flex-direction: column;
+
+    }
+
+    .left {
+        margin-bottom: 50px;
+    }
+}
